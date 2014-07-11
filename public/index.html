@@ -83,10 +83,10 @@
 				    <td>Song</td>
 					<td>Remove</td>
 			    </tr>
-			    <tr class="checkbox" ng-repeat="todo in todos">
-				    <td>Vote Icon Soon</td>
+			    <tr ng-repeat="todo in todos">
+				    <td><button class="btn btn-success icon-thumbs-up" alt="Up vote this song if you like it.">Vote</button></td>
 				    <td>{{ todo.text }}</td>
-					<td><button class="btn btn-danger fa fa-times" ng-click="deleteTodo(todo._id)"></button></td>
+					<td><button class="btn btn-danger fa fa-times" ng-click="deleteTodo(todo._id)" alt="Remove the song if you need to make an edit and then add it back."></button></td>
 			    </tr>
 			  </table>
 			</div>
