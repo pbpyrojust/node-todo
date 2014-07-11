@@ -7,17 +7,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Ashley and Brian's wedding song list webapp | Add a song! | Created by JustWhat.net</title>
+	<title>Ashley and Brian's wedding song list app | Add a song! | Created by JustWhat.net</title>
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap-checkbox.css">
 	<style>
 		html 					{ overflow-y:scroll; }
 		body 					{ padding-top:50px; }
 		#todo-list 				{ margin-bottom:30px; font-size:24px; }
 		#todo-form 	 			{ margin-bottom:50px; }
+		input[type="checkbox"]	{ margin-top: 10px; }
 	</style>
 
 	<!-- SPELLS -->
@@ -26,17 +26,6 @@
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="js/bootstrap-checkbox.js"></script>
-	<script>
-	var $j = jQuery.noConflict();
-	
-	$j('input[type="checkbox"].large').checkbox({
-	    buttonStyle: 'btn-link btn-large',
-	    checkedClass: 'icon-check',
-	    uncheckedClass: 'icon-check-empty'
-	});
-	</script>
 
 </head>
 <!-- SET THE CONTROLLER -->
@@ -57,7 +46,7 @@
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
 				<div class="checkbox" ng-repeat="todo in todos">
 					<label>
-						<input type="checkbox" class="large" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
 					</label>
 				</div>
 
