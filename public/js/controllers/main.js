@@ -33,7 +33,6 @@ angular.module('todoController', [])
 						$scope.todos = data; // assign our new list of todos
 					});
 			}
-
 		};
 
 		// DELETE ==================================================================
