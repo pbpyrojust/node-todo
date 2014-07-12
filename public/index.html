@@ -86,7 +86,6 @@
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
 			<div class="col-lq-12">
-			<pre>{{todos}}</pre>
 			<div class="table-responsive">
 			  <table class="table">
 			    <tr>
@@ -94,7 +93,7 @@
 				    <td>Song</td>
 					<td>Remove</td>
 			    </tr>
-			    <tr ng-repeat="todo in todos">
+			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
 				    <td><button class="btn btn-success icon-thumbs-up" alt="Up vote this song if you like it.">Vote</button></td>
 				    <td>{{ todo.text }}</td>
 					<td><button class="btn btn-danger fa fa-times" ng-click="deleteTodo(todo._id)" alt="Remove the song if you need to make an edit and then add it back."></button></td>
