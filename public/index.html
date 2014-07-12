@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/xeditable.css">
 	<style>
 		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:8px; }
+		body 					{ padding-top:8px; background-color:#F8FDE2; }
 		#todo-list 				{ margin-bottom:8px; font-size:24px; }
 		#todo-form 	 			{ margin-bottom:8px; }
 		input[type="checkbox"]	{ margin-top: 10px; }
@@ -87,11 +87,11 @@
 		<div id="todo-list" class="row">
 			<div class="col-lq-12">
 			<div class="table-responsive">
-			  <table class="table">
+			  <table class="table table-striped">
 			    <tr>
-				    <td>Vote</td>
-				    <td>Song</td>
-					<td>Remove</td>
+				    <th>Vote</th>
+				    <th>Song</th>
+					<th>Remove</th>
 			    </tr>
 			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
 				    <td><button class="btn btn-success icon-thumbs-up" alt="Up vote this song if you like it.">Vote</button></td>
