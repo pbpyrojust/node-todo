@@ -1,1 +1,2 @@
-angular.module('abTodo', ['todoController', 'todoService']);
+angular.module('abTodo', ['todoController', 'todoService', 'xeditable']);
+

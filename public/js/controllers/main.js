@@ -3,6 +3,7 @@ angular.module('todoController', [])
 	// inject the Todo service factory into our controller
 	.controller('mainController', function($scope, $http, Todos) {
 		$scope.formData = {};
+		$scope.inputData = {};
 		$scope.loading = true;
 
 		// GET =====================================================================
@@ -28,7 +29,6 @@ angular.module('todoController', [])
             	.success(function(data) {
                 	$scope.loading = false;
 					$scope.formData = {}; // clear the form so our user is ready to enter another
-					$scope.todos.unshift(data); // assign our new list of todos
 					});
 				}
 			};
@@ -45,6 +45,7 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
-	
+		
 	});
+	
 	
