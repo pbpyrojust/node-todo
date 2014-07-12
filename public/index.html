@@ -79,7 +79,7 @@
 		</div>
 		
 		<div class="text-center text-muted">
-			<p>*Currently working on editing and voting functions.</p>
+			<p>Here is a public list that everyone can add their favorite songs to Ashley and Brian's wedding song list. Feel free to add the name and artist of the song and add it to the list. I am also currently working on editing and voting functions.</p>
 			<p>Created by <a href="http://justwhat.net">JustWhat.net</a></p>
 		</div>
 
@@ -91,12 +91,12 @@
 			    <tr>
 				    <th>Vote</th>
 				    <th>Song</th>
-					<th>Remove</th>
+					<th>Edit</th>
 			    </tr>
 			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
-				    <td><button class="btn btn-success icon-thumbs-up" alt="Up vote this song if you like it.">Vote</button></td>
+				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it."></button></td>
 				    <td>{{ todo.text }}</td>
-					<td><button class="btn btn-danger fa fa-times" ng-click="deleteTodo(todo._id)" alt="Remove the song if you need to make an edit and then add it back."></button></td>
+					<td><button class="btn btn-danger fa fa-edit" ng-click="" alt="Edit the song if you need to make an edit and then add it back."></button></td>
 			    </tr>
 			  </table>
 			</div>
