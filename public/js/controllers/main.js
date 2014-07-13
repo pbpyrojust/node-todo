@@ -47,4 +47,10 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
+		
+		$scope.updateTodo = function() {
+    		return $http.post('/api/todos', $scope.todo);
+		};
+		
 	});
+	

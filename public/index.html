@@ -11,8 +11,8 @@
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/xeditable.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><!-- font awesome for icons -->
+	<link rel="stylesheet" href="css/xeditable.css"><!-- editable css -->
 	<style>
 		html 					{ overflow-y:scroll; }
 		body 					{ padding-top:8px; background-color:#F8FDE2; }
@@ -37,21 +37,10 @@
 
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-
+	<script src="js/services/xeditable.min.js"></script><!-- load editable -->
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
-	<script src="js/services/xeditable.min.js"></script>
 	<script src="js/core.js"></script> <!-- load our main application -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		ga('create', 'UA-52771554-1', 'auto');
-		ga('send', 'pageview');
-	
-	</script>
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
@@ -95,8 +84,8 @@
 			    </tr>
 			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
 				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it."></button></td>
-				    <td>{{ todo.text }}</td>
-					<td><button class="btn btn-danger fa fa-edit" ng-click="" alt="Edit the song if you need to make an edit and then add it back."></button></td>
+				    <td editable-text="todo.text" e-form="textBtnForm" onaftersave="">{{ todo.text }}</td>
+					<td><button class="btn btn-danger fa fa-edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible" alt="Edit the song if you need to make an edit and then add it back."></button></td>
 			    </tr>
 			  </table>
 			</div>
@@ -109,6 +98,15 @@
 		</div>
 
 	</div>
-
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-52771554-1', 'auto');
+	  ga('send', 'pageview');
+	
+	</script>
 </body>
 </html>
