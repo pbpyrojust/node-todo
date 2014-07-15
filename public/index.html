@@ -83,7 +83,7 @@
 					<th>Edit</th>
 			    </tr>
 			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
-				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it."></button></td>
+				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it." ng-click="Todos.vote(todo._id)"></button></td>
 				    <td editable-text="todo.text" e-form="textBtnForm" onaftersave="">{{ todo.text }}</td>
 					<td><button class="btn btn-danger fa fa-edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible" alt="Edit the song if you need to make an edit and then add it back."></button></td>
 			    </tr>
