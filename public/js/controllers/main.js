@@ -48,8 +48,15 @@ angular.module('todoController', [])
 				});
 		};
 		
-		$scope.updateTodo = function() {
-    		return $http.post('/api/todos', $scope.todo);
+		$scope.updateTodo = function(id) {
+			$scope.loading = true;
+
+			Todos.get(id)
+				// if successful creation, call our get function to get all the new todos
+				.success(function(data) {
+					$scope.loading = false;
+					$scope.todos = data; // assign our new list of todos
+				});
 		};
 		
 	});
