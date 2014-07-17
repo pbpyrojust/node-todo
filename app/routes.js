@@ -56,7 +56,7 @@ module.exports = function(app) {
 	});
 	
 	app.get('/api/todos/:todo_id/vote', function(req, res) {
-    	Todo.update({_id : req.params.todo_id}, { $inc: {votes: 1} } ), function(err, todo) {
+    	Todo.update({_id : req.params.todo_id}, { $inc: {votes: 1} } ), function(err, doc) {
 		}
 	});
 
