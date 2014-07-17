@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>| Add a song! |</title>
+	<title>Ashley and Brian's wedding song list app | Add a song! | Created by JustWhat.net</title>
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -68,12 +68,15 @@
 		</div>
 		
 		<div class="text-center text-muted">
+			<p>Here is a public list that everyone can add their favorite songs to Ashley and Brian's wedding song list. Feel free to add the name and artist of the song and add it to the list. I am also currently working on editing and voting functions.</p>
+			<p><strong>Don't forget the wedding is August 16th 2014!</strong></p>
+			<p>Created by <a href="http://justwhat.net">JustWhat.net</a></p>
 		</div>
 
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
 			<div class="col-lq-12">
-			<pre>{{ todos }}</pre>
+			<pre style="display:none;">{{ todos }}</pre>
 			<div class="table-responsive">
 			  <table class="table table-striped">
 			    <tr>
@@ -82,7 +85,7 @@
 					<th>Edit</th>
 			    </tr>
 			    <tr ng-repeat="todo in todos | orderBy: '-_id'">
-				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it." data-ng-click="updateTodo()"></button></td>
+				    <td><button class="btn btn-success fa fa-thumbs-o-up" alt="Up vote this song if you like it." ng-click="deletedTodo()"></button></td>
 				    <td editable-text="todo.text" e-form="textBtnForm" onaftersave="">{{ todo.text }}</td>
 					<td><button class="btn btn-danger fa fa-edit" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible" alt="Edit the song if you need to make an edit and then add it back."></button></td>
 			    </tr>

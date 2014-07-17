@@ -56,16 +56,7 @@ module.exports = function(app) {
 	});
 	
 	app.get('/api/todos/:todo_id/vote', function(req, res) {
-    	Todo.vote({_id : req.params.todo_id}, { $inc: {votes: 1} } ), function(err, doc) {
-			if (err)
-				res.send(err);
-
-			// get and return all the todos after you create another
-			Todo.find(function(err, todos) {
-				if (err)
-					res.send(err)
-				res.json(todos);
-			});
+    	Todo.update({_id : req.params.todo_id}, { $inc: {votes: 1} } ), function(err, todo) {
 		}
 	});
 
